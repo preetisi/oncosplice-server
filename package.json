@@ -1,0 +1,19 @@
+{
+  "name": "oncosplice-server",
+  "version": "1.0.0",
+  "description": "oncosplice web server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/preetisi/oncosplice-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/preetisi/oncosplice-server/issues"
+  },
+  "homepage": "https://github.com/preetisi/oncosplice-server#readme"
+}
