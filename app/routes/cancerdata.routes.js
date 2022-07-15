@@ -4,7 +4,26 @@ module.exports = app => {
     var router = require("express").Router();
 
     // Retrieve all Datasets
-    router.post("/", datasets.testQuery);
+    router.get("/", datasets.testQuery);
+
+    router.post("/", datasets.getUiFields);
+
+    router.post("/", datasets.getSignatureList);
+
+    router.post("/", datasets.getSelectedMetaDataUiFields);
+
+    router.post("/", datasets.matchCoordinatesPreSubmission);
+
+    router.post("/", datasets.matchGenesPreSubmission);
+
+    router.post("/", datasets.fetchHeatmapData);
+
+    router.post("/", datasets.fetchSingleUID);
+
+    router.post("/", datasets.fetchGTEX);
+
+    router.post("/", datasets.cbioportalCurlCommand);
+
     app.use('/api/datasets', router);
 
 };
