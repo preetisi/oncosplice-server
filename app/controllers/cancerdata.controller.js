@@ -27,7 +27,9 @@ async function getUiFields(req, res){
 
 		req.on('end', function () {
 	            var post = qs.parse(body);
-	            const queryHelperMap = dataBaseQueryHelper(post["cancerName"])
+	            const queryHelperMap = dataBaseQueryHelper(post["cancerName"]);
+	            const clinicalMetadataResult = await dbCredentials.query(queryHelperMap["META"]["QUERY"]);
+	            clinicalMetadataResult
 	            // use post['blah'], etc.
 	    });
 	}
