@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: ["http://localhost:8080", "http://localhost:8081"]
 };
 
 app.use(cors(corsOptions));
@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 
 require("./app/routes/cancerdata.routes.js")(app);
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

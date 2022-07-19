@@ -6,7 +6,7 @@ module.exports = app => {
     // Retrieve all Datasets
     router.get("/", datasets.testQuery);
 
-    router.post("/", datasets.getUiFields);
+    /*router.post("/", datasets.getUiFields);
 
     router.post("/", datasets.getSignatureList);
 
@@ -22,7 +22,7 @@ module.exports = app => {
 
     router.post("/", datasets.fetchGTEX);
 
-    router.post("/", datasets.cbioportalCurlCommand);
+    router.post("/", datasets.cbioportalCurlCommand);*/
 
     app.use('/api/datasets', router);
 

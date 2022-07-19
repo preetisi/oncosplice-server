@@ -1,16 +1,37 @@
 const { dbCredentials } = require("../config/oncodb.config.js");
+const { dataBaseQueryHelper } = require("databasequeryhelper.js");
+var qs = require('querystring');
 
 async function testQuery(req, res){
   try {
     const resultOfQuery = await dbCredentials.query("SELECT * FROM GBM_TCGA_SPLICE LIMIT 3;");
-    console.log(resultOfQuery.rows);
+    res.send(resultOfQuery);
+    /*res.json({
+    	data: resultOfQuery
+    })*/
   } catch (error) {
-    console.error(error);
+    res.send([4, 5, 6]);
   }
 }
 
 async function getUiFields(req, res){
-	console.log("not implemented");
+	if (req.method == 'POST') {
+	    var body = '';
+
+	    req.on('data', function (data) {
+	        body += data;
+
+	        if (body.length > 1e7)
+	                request.connection.destroy();
+	    });
+
+		req.on('end', function () {
+	            var post = qs.parse(body);
+	            const queryHelperMap = dataBaseQueryHelper(post["cancerName"])
+	            // use post['blah'], etc.
+	    });
+	}
+
 }
 
 async function getSignatureList(req, res){
