@@ -15,7 +15,6 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to the Oncosplice Web Application backend." });
 });

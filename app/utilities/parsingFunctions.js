@@ -1,37 +1,28 @@
 function removeNewlinesAndUnderscores(inputString){
-	inputString = inputString.replaceAll("_", "");
-	inputString = inputString.replaceAll("/\r|\n/", "");
+	inputString = inputString.replace(/_/g, "");
+	inputString = inputString.replace(/\n|\r/g, "");
 	return inputString;
 }
 
 function changeSpecialCharsToBlank(inputString){
-	inputString = inputString.replaceAll(".", "_");
-	inputString = inputString.replaceAll("-", "_");
-	inputString = inputString.replaceAll("_", " ");
+	inputString = inputString.replace(/\.|\-/g, "_");
+	inputString = inputString.replace(/_/g, " ");
 	inputString = inputString.toLowerCase();
-	inputString = inputString.replaceAll("\n", "");
-	inputString = inputString.replaceAll("\r", "");
+	inputString = inputString.replace(/\n|\r/g, "");
 	return inputString;
 }
 
 function cleanUpTranslator(inputString){
 
-	inputString = inputString.replaceAll(".", "_");
-	inputString = inputString.replaceAll("-", "_");
-	inputString = inputString.replaceAll("(", "_");
-	inputString = inputString.replaceAll(")", "_");
-	inputString = inputString.replaceAll("\r", "");
-	inputString = inputString.replaceAll("\n", "");
-	inputString = inputString.replaceAll("_txt", "");
+	inputString = inputString.replace(/\.|\-|\(|\)/g, "_");
+	inputString = inputString.replace(/\r|\n|_txt/g, "");
 	return inputString;
 }
 
 function convertToUnderscores(inputString){
-	inputString = inputString.replaceAll(".", "_");
-	inputString = inputString.replaceAll("-", "_");
-	inputString = inputString.replaceAll("(", "_");
-	inputString = inputString.replaceAll(") ", "__");
-	inputString = inputString.replaceAll(")", "_");
+	inputString = inputString.replace(/\.|\-|\(/g, "_");
+	inputString = inputString.replace(/)\s/g, "__");
+	inputString = inputString.replace(/)/g, "_");
 	return inputString;
 }
 

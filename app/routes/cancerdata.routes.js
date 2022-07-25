@@ -1,5 +1,5 @@
 module.exports = app => {
-    const datasets = require("../controllers/cancerdata.controller.js");
+    //const datasets = require("../controllers/cancerdata.controller.js");
 
     var router = require("express").Router();
 
